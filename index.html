@@ -9,9 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════════════
-   CSS VARIABLES
-═══════════════════════════════════════════════ */
 :root{
   --black:#0a0a0f;
   --black-mid:#111118;
@@ -36,10 +33,6 @@
   --radius-lg:16px;
   --tr:0.3s cubic-bezier(0.25,0.46,0.45,0.94);
 }
-
-/* ═══════════════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:var(--font-body);font-size:1.05rem;line-height:1.6;overflow-x:hidden;cursor:none}
@@ -52,29 +45,17 @@ button{cursor:none;font-family:var(--font-body);border:none;background:none}
 ::-webkit-scrollbar-thumb{background:var(--crimson-dim);border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:var(--crimson)}
 
-/* ═══════════════════════════════════════════════
-   NOISE OVERLAY
-═══════════════════════════════════════════════ */
 .noise{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.025;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size:200px}
 
-/* ═══════════════════════════════════════════════
-   CURSOR
-═══════════════════════════════════════════════ */
 #cur{position:fixed;top:0;left:0;z-index:10000;width:10px;height:10px;background:var(--crimson);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
 #cur2{position:fixed;top:0;left:0;z-index:9999;width:36px;height:36px;border:1.5px solid rgba(232,25,44,.5);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
 body.ch #cur{width:14px;height:14px;background:var(--gold)}
 body.ch #cur2{width:50px;height:50px;border-color:var(--gold)}
 
-/* ═══════════════════════════════════════════════
-   CONTAINER
-═══════════════════════════════════════════════ */
 .wrap{max-width:1400px;margin:0 auto;padding:0 2rem}
 
-/* ═══════════════════════════════════════════════
-   NAVBAR
-═══════════════════════════════════════════════ */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--tr),box-shadow var(--tr)}
 nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px rgba(0,0,0,.5);backdrop-filter:blur(20px)}
 .nav-in{display:flex;align-items:center;gap:2rem;max-width:1400px;margin:0 auto;padding:0 2rem;height:68px}
@@ -99,7 +80,6 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .hbg.open span:nth-child(2){opacity:0}
 .hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* Search */
 .srch-ov{position:absolute;top:100%;left:0;right:0;background:rgba(10,10,15,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.5rem 2rem;transform:translateY(-10px);opacity:0;pointer-events:none;transition:all var(--tr)}
 .srch-ov.on{transform:translateY(0);opacity:1;pointer-events:all}
 .srch-box{max-width:700px;margin:0 auto;position:relative}
@@ -114,9 +94,6 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .sri-t{font-size:.95rem;font-weight:600}
 .sri-m{font-size:.78rem;color:var(--text-muted)}
 
-/* ═══════════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════════ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:8rem}
 .hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center top;transition:background-image .8s ease;transform:scale(1.05);animation:hdrift 20s ease-in-out infinite alternate}
 @keyframes hdrift{from{transform:scale(1.05) translate(0,0)}to{transform:scale(1.1) translate(-1%,-.5%)}}
@@ -147,9 +124,6 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .dot{width:8px;height:8px;background:rgba(255,255,255,.25);border-radius:50%;transition:all var(--tr)}
 .dot.act{background:var(--crimson);width:24px;border-radius:4px}
 
-/* ═══════════════════════════════════════════════
-   TICKER
-═══════════════════════════════════════════════ */
 .ticker{background:var(--crimson);display:flex;align-items:center;overflow:hidden;height:42px;position:relative;z-index:2}
 .tick-lbl{flex-shrink:0;padding:0 1.5rem;font-family:var(--font-mono);font-size:.75rem;letter-spacing:2px;color:#fff;background:rgba(0,0,0,.25);height:100%;display:flex;align-items:center;border-right:1px solid rgba(255,255,255,.2)}
 .tick-tr{overflow:hidden;flex:1;height:100%}
@@ -158,18 +132,12 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .tick-it{padding:0 2rem;font-size:.85rem;color:rgba(255,255,255,.9)}
 .tick-it em{color:rgba(255,255,255,.5);font-style:normal;margin-right:.4rem}
 
-/* ═══════════════════════════════════════════════
-   GENRE PILLS
-═══════════════════════════════════════════════ */
 .pills-strip{padding:2rem 0 1rem;background:var(--black-mid)}
 .pills{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
 .pill{padding:.45rem 1.2rem;background:rgba(255,255,255,.06);color:var(--text-muted);border-radius:100px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--border);transition:all var(--tr)}
 .pill:hover{background:rgba(232,25,44,.15);border-color:var(--border-glow);color:var(--text)}
 .pill.act{background:var(--crimson);border-color:var(--crimson);color:#fff}
 
-/* ═══════════════════════════════════════════════
-   SECTIONS
-═══════════════════════════════════════════════ */
 .sec{padding:5rem 0;background:var(--black)}
 .sec-dk{background:var(--black-mid)}
 .sec-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem}
@@ -180,10 +148,7 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .sort-sel{background:var(--black-light);border:1px solid var(--border);color:var(--text-muted);padding:.4rem .9rem;border-radius:var(--radius);font-size:.82rem;outline:none;font-family:var(--font-body);transition:border-color var(--tr)}
 .sort-sel:focus{border-color:var(--crimson)}
 
-/* Grid */
 .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.5rem}
-
-/* Movie Card */
 .mcard{background:var(--card);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);position:relative}
 .mcard:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 60px rgba(0,0,0,.6),var(--glow-red);border-color:rgba(232,25,44,.3)}
 .cp{position:relative;aspect-ratio:2/3;overflow:hidden}
@@ -206,14 +171,10 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .cm{display:flex;gap:.6rem;font-size:.75rem;color:var(--text-muted);font-family:var(--font-mono)}
 .cg{background:rgba(255,255,255,.07);padding:.1rem .5rem;border-radius:3px}
 
-/* Load More */
 .lm-w{text-align:center;margin-top:3rem}
 .btn-lm{padding:.85rem 3rem;background:transparent;border:1.5px solid var(--border);color:var(--text-muted);border-radius:var(--radius);font-family:var(--font-mono);font-size:.82rem;letter-spacing:2px;text-transform:uppercase;transition:all var(--tr)}
 .btn-lm:hover{border-color:var(--crimson);color:var(--crimson);box-shadow:var(--glow-red)}
 
-/* ═══════════════════════════════════════════════
-   PROMO BANNER
-═══════════════════════════════════════════════ */
 .promo{background:linear-gradient(135deg,var(--crimson-dim) 0%,#6b0010 50%,var(--black) 100%);padding:4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden}
 .promo::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
 .promo-c{position:relative}
@@ -225,18 +186,13 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .stat-n{display:block;font-family:var(--font-display);font-size:3rem;color:#fff;line-height:1}
 .stat-l{font-family:var(--font-mono);font-size:.72rem;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase}
 
-/* ═══════════════════════════════════════════════
-   GENRE GRID
-═══════════════════════════════════════════════ */
 .ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
 .gcard{aspect-ratio:3/2;border-radius:var(--radius-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;cursor:none;position:relative;overflow:hidden;transition:transform var(--tr),box-shadow var(--tr);border:1px solid var(--border)}
 .gcard:hover{transform:scale(1.05);box-shadow:0 10px 40px rgba(0,0,0,.5)}
 .gcard span{font-size:1.8rem}
 .gcard p{font-family:var(--font-mono);font-size:.78rem;letter-spacing:2px;text-transform:uppercase}
 
-/* ═══════════════════════════════════════════════
-   MODAL
-═══════════════════════════════════════════════ */
+/* ── MODAL WITH IFRAME FIX ── */
 .modal-ov{position:fixed;inset:0;z-index:2000;background:rgba(5,5,10,.95);backdrop-filter:blur(15px);display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity var(--tr)}
 .modal-ov.on{opacity:1;pointer-events:all}
 .modal-box{background:var(--black-light);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:900px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:scale(.95);transition:transform var(--tr)}
@@ -244,8 +200,9 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .modal-x{position:sticky;top:1rem;float:right;margin-right:1rem;margin-top:1rem;width:36px;height:36px;background:rgba(255,255,255,.1);border-radius:50%;color:var(--text-muted);display:flex;align-items:center;justify-content:center;transition:all var(--tr);z-index:10;font-size:.9rem}
 .modal-x:hover{background:var(--crimson);color:#fff}
 .m-player{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
-.m-player video{width:100%;height:100%;object-fit:cover}
-.m-pov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.5);transition:opacity var(--tr)}
+/* IFRAME VIDEO PLAYER */
+.m-player iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.m-pov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);transition:opacity var(--tr);z-index:2}
 .m-pov.hid{opacity:0;pointer-events:none}
 .play-big{width:80px;height:80px;background:rgba(232,25,44,.9);border-radius:50%;font-size:1.8rem;color:#fff;display:flex;align-items:center;justify-content:center;transition:transform var(--tr),box-shadow var(--tr);padding-left:6px}
 .play-big:hover{transform:scale(1.1);box-shadow:0 0 40px rgba(232,25,44,.6)}
@@ -261,9 +218,6 @@ nav.sc{background:rgba(10,10,15,.97);box-shadow:0 1px 0 var(--border),0 4px 30px
 .qbadges{display:flex;gap:.5rem;flex-wrap:wrap}
 .qb{padding:.25rem .7rem;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.3);border-radius:4px;font-size:.72rem;font-family:var(--font-mono);letter-spacing:1px;color:var(--gold)}
 
-/* ═══════════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════════ */
 footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4rem 0 2rem}
 .ft-top{display:flex;gap:4rem;flex-wrap:wrap;margin-bottom:3rem}
 .ft-brand{flex:1;min-width:250px}
@@ -281,35 +235,20 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
 .ft-bot{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:var(--text-dim)}
 .ft-sec{font-family:var(--font-mono)}
 
-/* ═══════════════════════════════════════════════
-   TOAST
-═══════════════════════════════════════════════ */
 #toast{position:fixed;bottom:2rem;right:2rem;z-index:5000;background:var(--card);border:1px solid var(--border);color:var(--text);padding:1rem 1.5rem;border-radius:var(--radius);font-size:.9rem;box-shadow:0 10px 40px rgba(0,0,0,.5);transform:translateY(20px);opacity:0;transition:all var(--tr);pointer-events:none;max-width:320px}
 #toast.show{transform:translateY(0);opacity:1}
 #toast.ok{border-color:#22a84b}
-
-/* Back to top */
 #btt{position:fixed;bottom:2rem;left:2rem;z-index:500;width:44px;height:44px;background:var(--black-light);border:1px solid var(--border);color:var(--text-muted);border-radius:50%;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all var(--tr);opacity:0;transform:translateY(10px);pointer-events:none}
 #btt.vis{opacity:1;transform:translateY(0);pointer-events:all}
 #btt:hover{background:var(--crimson);border-color:var(--crimson);color:#fff;box-shadow:var(--glow-red)}
 
-/* ═══════════════════════════════════════════════
-   SKELETON
-═══════════════════════════════════════════════ */
 .skel{background:linear-gradient(90deg,var(--card) 25%,var(--card-hover) 50%,var(--card) 75%);background-size:200% 100%;animation:shim 1.5s infinite;border-radius:var(--radius)}
 @keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .skel-p{aspect-ratio:2/3;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
 .skel-l{height:14px;margin:8px 12px}
 .skel-l.w6{width:60%}
 
-/* ═══════════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════════ */
-@media(max-width:1024px){
-  .hero-cnt{padding:0 2rem}
-  .h-ctrl{right:2rem}
-  .promo{padding:3rem 2rem}
-}
+@media(max-width:1024px){.hero-cnt{padding:0 2rem}.h-ctrl{right:2rem}.promo{padding:3rem 2rem}}
 @media(max-width:768px){
   .nav-links{display:none;flex-direction:column;gap:.5rem}
   .nav-links.open{display:flex;position:absolute;top:68px;left:0;right:0;background:rgba(10,10,15,.98);backdrop-filter:blur(20px);padding:1.5rem;border-bottom:1px solid var(--border)}
@@ -343,7 +282,6 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
 <div id="cur"></div>
 <div id="cur2"></div>
 
-<!-- ════════ NAVBAR ════════ -->
 <nav id="nav">
   <div class="nav-in">
     <a href="#" class="logo">
@@ -374,22 +312,21 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
   </div>
 </nav>
 
-<!-- ════════ HERO ════════ -->
 <section class="hero" id="home">
   <div class="hero-bg" id="hBg"></div>
   <div class="hero-gr"></div>
   <div class="hero-cnt" id="hCnt">
     <div class="h-badge"><span class="bdot"></span> NOW STREAMING</div>
-    <h1 class="h-title" id="hTtl">Oppenheimer</h1>
+    <h1 class="h-title" id="hTtl">With Love</h1>
     <div class="h-meta" id="hMeta">
-      <span class="rt">⭐ 8.9</span><span class="dv">|</span>
-      <span>2023</span><span class="dv">|</span>
-      <span>Drama · History</span><span class="dv">|</span>
-      <span>3h 0m</span>
+      <span class="rt">⭐ 7.7</span><span class="dv">|</span>
+      <span>2026</span><span class="dv">|</span>
+      <span>Romance · Comedy</span><span class="dv">|</span>
+      <span>2h 21m</span>
     </div>
-    <p class="h-desc" id="hDesc">The story of J. Robert Oppenheimer and his role in the development of the atomic bomb during World War II.</p>
+    <p class="h-desc" id="hDesc">A heartwarming romantic comedy that will make you laugh, cry, and fall in love.</p>
     <div class="h-acts">
-      <button class="btn-w" id="hWatch" data-id="1">
+      <button class="btn-w" id="hWatch" data-id="17">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         Watch Now
       </button>
@@ -407,13 +344,11 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
   </div>
 </section>
 
-<!-- ════════ TICKER ════════ -->
 <div class="ticker">
   <span class="tick-lbl">🔥 TRENDING</span>
   <div class="tick-tr"><div class="tick-items" id="tickEl"></div></div>
 </div>
 
-<!-- ════════ PILLS ════════ -->
 <div class="pills-strip">
   <div class="wrap">
     <div class="pills" id="pillsEl">
@@ -430,7 +365,6 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
   </div>
 </div>
 
-<!-- ════════ TRENDING ════════ -->
 <section class="sec" id="trending">
   <div class="wrap">
     <div class="sec-hd">
@@ -441,34 +375,35 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
   </div>
 </section>
 
-<!-- ════════ MOVIES ════════ -->
 <section class="sec sec-dk" id="movies">
   <div class="wrap">
     <div class="sec-hd">
       <h2 class="sec-ttl"><span class="ttl-acc">▍</span>Latest Movies</h2>
-      <select class="sort-sel" id="sortSel"><option value="newest">Newest</option><option value="rating">Top Rated</option><option value="year">By Year</option></select>
+      <select class="sort-sel" id="sortSel">
+        <option value="newest">Newest</option>
+        <option value="rating">Top Rated</option>
+        <option value="year">By Year</option>
+      </select>
     </div>
     <div class="mgrid" id="mGrid"></div>
     <div class="lm-w"><button class="btn-lm" id="lmBtn">Load More Films</button></div>
   </div>
 </section>
 
-<!-- ════════ PROMO BANNER ════════ -->
 <div class="promo">
   <div class="promo-c">
-    <p class="promo-lbl">TOP RATED OF 2024</p>
-    <h2 class="promo-ttl">Dune: Part Two</h2>
-    <p class="promo-sub">Epic. Visionary. Unmissable.</p>
-    <button class="btn-w" data-id="5" style="font-size:.9rem;padding:1rem 2.5rem">▶ Watch Free Now</button>
+    <p class="promo-lbl">NOW SHOWING 2026</p>
+    <h2 class="promo-ttl">With Love</h2>
+    <p class="promo-sub">Laugh. Cry. Fall in Love.</p>
+    <button class="btn-w" data-id="17" style="font-size:.9rem;padding:1rem 2.5rem">▶ Watch Free Now</button>
   </div>
   <div class="promo-stats">
-    <div class="stat"><span class="stat-n">8.5</span><span class="stat-l">IMDb</span></div>
-    <div class="stat"><span class="stat-n">94%</span><span class="stat-l">RT Score</span></div>
-    <div class="stat"><span class="stat-n">3h</span><span class="stat-l">Runtime</span></div>
+    <div class="stat"><span class="stat-n">7.7</span><span class="stat-l">Rating</span></div>
+    <div class="stat"><span class="stat-n">HD</span><span class="stat-l">Quality</span></div>
+    <div class="stat"><span class="stat-n">2h</span><span class="stat-l">Runtime</span></div>
   </div>
 </div>
 
-<!-- ════════ SERIES ════════ -->
 <section class="sec" id="series">
   <div class="wrap">
     <div class="sec-hd">
@@ -479,7 +414,6 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
   </div>
 </section>
 
-<!-- ════════ GENRES ════════ -->
 <section class="sec sec-dk" id="genres">
   <div class="wrap">
     <div class="sec-hd"><h2 class="sec-ttl"><span class="ttl-acc">▍</span>Browse by Genre</h2></div>
@@ -487,7 +421,6 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
   </div>
 </section>
 
-<!-- ════════ FOOTER ════════ -->
 <footer>
   <div class="wrap">
     <div class="ft-top">
@@ -506,21 +439,29 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
       </div>
     </div>
     <div class="ft-bot">
-      <p>© 2025 MovieCore. All rights reserved.</p>
+      <p>© 2026 MovieCore. All rights reserved.</p>
       <p class="ft-sec">🔒 256-bit SSL Secured</p>
     </div>
   </div>
 </footer>
 
-<!-- ════════ MODAL ════════ -->
+<!-- ════ MODAL WITH IFRAME PLAYER ════ -->
 <div class="modal-ov" id="modal">
   <div class="modal-box">
     <button class="modal-x" id="mX">✕</button>
     <div class="m-player">
-      <video id="vid" controls preload="metadata">
-        <source id="vSrc" src="" type="video/mp4"/>
-      </video>
-      <div class="m-pov" id="mPov"><button class="play-big" id="pBig">▶</button></div>
+      <!-- IFRAME replaces video tag — works with Google Drive -->
+      <iframe
+        id="vid"
+        src="about:blank"
+        frameborder="0"
+        allowfullscreen
+        allow="autoplay; encrypted-media; picture-in-picture"
+        style="position:absolute;inset:0;width:100%;height:100%;border:none;background:#000">
+      </iframe>
+      <div class="m-pov" id="mPov">
+        <button class="play-big" id="pBig">▶</button>
+      </div>
     </div>
     <div class="m-info">
       <div class="m-row">
@@ -535,8 +476,10 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
         <button class="btn-dl m-dl" id="mDl4k">⬇ Download 4K</button>
       </div>
       <div class="qbadges">
-        <span class="qb">HD 1080p</span><span class="qb">4K UHD</span>
-        <span class="qb">Subtitles</span><span class="qb">Dolby Audio</span>
+        <span class="qb">HD 1080p</span>
+        <span class="qb">4K UHD</span>
+        <span class="qb">Subtitles</span>
+        <span class="qb">Dolby Audio</span>
       </div>
     </div>
   </div>
@@ -546,52 +489,53 @@ footer{background:var(--black-mid);border-top:1px solid var(--border);padding:4r
 <button id="btt" aria-label="Back to top">↑</button>
 
 <script>
-/* ════════════════════════════════════════════
-   MOVIE CORE — All-in-One JavaScript
-════════════════════════════════════════════ */
 'use strict';
 
-// ── DATA ──────────────────────────────────────
+// ════════════════════════════════════════
+//  MOVIES DATA — Add your movies here
+// ════════════════════════════════════════
 const MOVIES = [
-  {id:1, title:'Oppenheimer',       year:2023,rating:8.9,genre:'Drama',   dur:'3h 0m', badge:'HD', poster:'https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg', plot:'The story of J. Robert Oppenheimer and his role in the development of the atomic bomb during World War II.',videoUrl:''},
-  {id:2, title:'Barbie',            year:2023,rating:6.9,genre:'Comedy',  dur:'1h 54m',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/iuFNMS8vlbRVvZjM7MNpCsTUJDR.jpg',  plot:'Barbie suffers a crisis that leads her to question her world and herself.',videoUrl:''},
-  {id:3, title:'The Batman',        year:2022,rating:7.8,genre:'Action',  dur:'2h 56m',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg',  plot:'Batman ventures into Gotham City\'s underworld to unmask the Riddler.',videoUrl:''},
-  {id:4, title:'Top Gun: Maverick', year:2022,rating:8.2,genre:'Action',  dur:'2h 11m',badge:'4K', poster:'https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg',  plot:'After 30+ years of service, Pete Mitchell faces the mission of a lifetime.',videoUrl:''},
-  {id:5, title:'Dune: Part Two',    year:2024,rating:8.5,genre:'Sci-Fi',  dur:'2h 47m',badge:'4K', poster:'https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',  plot:'Paul Atreides unites with Chani to seek revenge against those who destroyed his family.',videoUrl:''},
-  {id:6, title:'Poor Things',       year:2023,rating:7.9,genre:'Drama',   dur:'2h 21m',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/kCGlIMHnOm8JPXIkNQeCSsvhQnR.jpg',  plot:'A young woman is brought back to life and explores the world with a child\'s curiosity.',videoUrl:''},
-  {id:7, title:'Mission: Impossible 7',year:2023,rating:7.7,genre:'Action',dur:'2h 43m',badge:'4K',poster:'https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg',   plot:'Ethan Hunt and his IMF team must track down a terrifying new weapon.',videoUrl:''},
-  {id:8, title:'Spider-Man: No Way Home',year:2021,rating:8.2,genre:'Action',dur:'2h 28m',badge:'HD',poster:'https://image.tmdb.org/t/p/w500/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg',plot:'Peter Parker asks Doctor Strange for help, unleashing chaos across the multiverse.',videoUrl:''},
-  {id:9, title:'Avatar: The Way of Water',year:2022,rating:7.6,genre:'Sci-Fi',dur:'3h 12m',badge:'4K',poster:'https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg',plot:'Jake Sully and Neytiri fight to stay alive and keep their family together.',videoUrl:''},
-  {id:10,title:'The Holdovers',     year:2023,rating:7.9,genre:'Drama',   dur:'2h 13m',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/VHmqSLySgZg7Jq6aFNWRSuEOJ3.jpg',  plot:'A curmudgeonly teacher is stuck babysitting students over the holiday break.',videoUrl:''},
-  {id:11,title:'Past Lives',        year:2023,rating:7.9,genre:'Romance', dur:'1h 45m',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/k3waqVXkpfXjTQlXBEL4EYUE2lm.jpg',  plot:'Childhood sweethearts from Korea are reunited decades later in New York.',videoUrl:''},
-  {id:12,title:'Killers of the Flower Moon',year:2023,rating:7.7,genre:'Thriller',dur:'3h 26m',badge:'HD',poster:'https://image.tmdb.org/t/p/w500/dB6aHCMqyqnEGSMznWNR5KXPPOO.jpg',plot:'Osage Nation members are murdered in 1920s Oklahoma under mysterious circumstances.',videoUrl:''},
-  {id:13,title:'Wonka',             year:2023,rating:7.1,genre:'Animation',dur:'1h 56m',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/qhb1qOilapbapxWQn9jtRCMwXJF.jpg', plot:'Young Willy Wonka arrives with genius for chocolates and extraordinary dreams.',videoUrl:''},
-  {id:14,title:'Talk to Me',        year:2022,rating:7.2,genre:'Horror',  dur:'1h 35m',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/kdPMUABsRKPEf2OfTCMNlRXHFtk.jpg',  plot:'Teens discover how to conjure spirits using an embalmed hand.',videoUrl:''},
-  {id:15,title:'Saltburn',          year:2023,rating:7.1,genre:'Thriller',dur:'2h 11m',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/qitIhBinFTpjfBs6DwYRqmT8RBk.jpg',  plot:'A student becomes fixated on his charming, mysterious classmate at Oxford.',videoUrl:''},
-  {id:16,title:'The Zone of Interest',year:2023,rating:7.4,genre:'Drama', dur:'1h 45m',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/hUu9zyZmDd8VZegKi1DvfE6ykoH.jpg',  plot:'The Auschwitz commandant and his wife build a dream life next to the camp.',videoUrl:''},
+  {id:1,  title:'Oppenheimer',         year:2023,rating:8.9,genre:'Drama',    dur:'3h 0m', badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg', plot:'The story of J. Robert Oppenheimer and the atomic bomb.',videoUrl:''},
+  {id:2,  title:'Barbie',              year:2023,rating:6.9,genre:'Comedy',   dur:'1h 54m',badge:'NEW', poster:'https://image.tmdb.org/t/p/w500/iuFNMS8vlbRVvZjM7MNpCsTUJDR.jpg',  plot:'Barbie questions her perfect world.',videoUrl:''},
+  {id:3,  title:'The Batman',          year:2022,rating:7.8,genre:'Action',   dur:'2h 56m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg',  plot:'Batman unmasks the Riddler in Gotham.',videoUrl:''},
+  {id:4,  title:'Top Gun: Maverick',   year:2022,rating:8.2,genre:'Action',   dur:'2h 11m',badge:'4K',  poster:'https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg',  plot:'Maverick faces his toughest mission yet.',videoUrl:''},
+  {id:5,  title:'Dune: Part Two',      year:2024,rating:8.5,genre:'Sci-Fi',   dur:'2h 47m',badge:'4K',  poster:'https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',  plot:'Paul Atreides seeks revenge against his enemies.',videoUrl:''},
+  {id:6,  title:'Poor Things',         year:2023,rating:7.9,genre:'Drama',    dur:'2h 21m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/kCGlIMHnOm8JPXIkNQeCSsvhQnR.jpg',  plot:'A young woman is brought back to life and explores the world.',videoUrl:''},
+  {id:7,  title:'Mission: Impossible 7',year:2023,rating:7.7,genre:'Action',  dur:'2h 43m',badge:'4K',  poster:'https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg',   plot:'Ethan Hunt tracks down a terrifying new weapon.',videoUrl:''},
+  {id:8,  title:'Spider-Man: No Way Home',year:2021,rating:8.2,genre:'Action',dur:'2h 28m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg', plot:'Peter Parker unleashes chaos across the multiverse.',videoUrl:''},
+  {id:9,  title:'Avatar: The Way of Water',year:2022,rating:7.6,genre:'Sci-Fi',dur:'3h 12m',badge:'4K',poster:'https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg', plot:'Jake Sully fights to keep his family together on Pandora.',videoUrl:''},
+  {id:10, title:'The Holdovers',        year:2023,rating:7.9,genre:'Drama',   dur:'2h 13m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/VHmqSLySgZg7Jq6aFNWRSuEOJ3.jpg',  plot:'A teacher babysits students over the holiday break.',videoUrl:''},
+  {id:11, title:'Past Lives',           year:2023,rating:7.9,genre:'Romance', dur:'1h 45m',badge:'NEW', poster:'https://image.tmdb.org/t/p/w500/k3waqVXkpfXjTQlXBEL4EYUE2lm.jpg',  plot:'Childhood sweethearts are reunited decades later in New York.',videoUrl:''},
+  {id:12, title:'Killers of the Flower Moon',year:2023,rating:7.7,genre:'Thriller',dur:'3h 26m',badge:'HD',poster:'https://image.tmdb.org/t/p/w500/dB6aHCMqyqnEGSMznWNR5KXPPOO.jpg',plot:'Osage Nation members are murdered in 1920s Oklahoma.',videoUrl:''},
+  {id:13, title:'Wonka',                year:2023,rating:7.1,genre:'Animation',dur:'1h 56m',badge:'NEW', poster:'https://image.tmdb.org/t/p/w500/qhb1qOilapbapxWQn9jtRCMwXJF.jpg',  plot:'Young Willy Wonka arrives with extraordinary dreams.',videoUrl:''},
+  {id:14, title:'Talk to Me',           year:2022,rating:7.2,genre:'Horror',  dur:'1h 35m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/kdPMUABsRKPEf2OfTCMNlRXHFtk.jpg',  plot:'Teens discover how to conjure spirits using an embalmed hand.',videoUrl:''},
+  {id:15, title:'Saltburn',             year:2023,rating:7.1,genre:'Thriller',dur:'2h 11m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/qitIhBinFTpjfBs6DwYRqmT8RBk.jpg',  plot:'A student becomes fixated on his mysterious classmate at Oxford.',videoUrl:''},
+  {id:16, title:'The Zone of Interest', year:2023,rating:7.4,genre:'Drama',   dur:'1h 45m',badge:'HD',  poster:'https://image.tmdb.org/t/p/w500/hUu9zyZmDd8VZegKi1DvfE6ykoH.jpg',  plot:'The Auschwitz commandant builds a dream life next to the camp.',videoUrl:''},
+
+  // ══ YOUR MOVIE — WITH LOVE ══
+  {
+    id: 17,
+    title: 'With Love',
+    year: 2026,
+    rating: 7.7,
+    genre: 'Romance',
+    dur: '2h 21m',
+    badge: 'HD',
+    poster: 'https://drive.google.com/uc?export=view&id=19XZsnPvOkAuH_L3uTQ0MzMmZ2K4I--Sh',
+    plot: 'A heartwarming romantic comedy that will make you laugh, cry, and fall in love.',
+    videoUrl: 'https://drive.google.com/file/d/1-0NzQX-Aov1sqyTcQ1q53hv0dcDyKOvY/preview'
+  },
 ];
 
 const SERIES = [
   {id:101,title:'The Last of Us',      year:2023,rating:8.7,genre:'Drama',   dur:'S1',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg', plot:'A smuggler and teenager journey across post-apocalyptic America.',videoUrl:''},
-  {id:102,title:'House of the Dragon', year:2022,rating:8.4,genre:'Action',  dur:'S2',badge:'4K', poster:'https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg', plot:'The story of House Targaryen, 200 years before Game of Thrones.',videoUrl:''},
+  {id:102,title:'House of the Dragon', year:2022,rating:8.4,genre:'Action',  dur:'S2',badge:'4K', poster:'https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg', plot:'House Targaryen, 200 years before Game of Thrones.',videoUrl:''},
   {id:103,title:'Succession',          year:2023,rating:9.3,genre:'Drama',   dur:'S4',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/7HW47XbkNQ5fiwQFYGWdw9gs144.jpg', plot:'A dysfunctional family fights over a global media empire.',videoUrl:''},
-  {id:104,title:'The Bear',            year:2023,rating:8.7,genre:'Drama',   dur:'S2',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/sHFlbKS3WLqMnp9t2ghADIJFnuQ.jpg', plot:'A fine dining chef returns home to run the family sandwich shop.',videoUrl:''},
-  {id:105,title:'Andor',               year:2022,rating:8.4,genre:'Sci-Fi',  dur:'S1',badge:'4K', poster:'https://image.tmdb.org/t/p/w500/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg', plot:'A prequel to Rogue One set in the Star Wars universe.',videoUrl:''},
+  {id:104,title:'The Bear',            year:2023,rating:8.7,genre:'Drama',   dur:'S2',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/sHFlbKS3WLqMnp9t2ghADIJFnuQ.jpg', plot:'A fine dining chef returns to run the family sandwich shop.',videoUrl:''},
+  {id:105,title:'Andor',               year:2022,rating:8.4,genre:'Sci-Fi',  dur:'S1',badge:'4K', poster:'https://image.tmdb.org/t/p/w500/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg', plot:'A prequel to Rogue One in the Star Wars universe.',videoUrl:''},
   {id:106,title:'The White Lotus',     year:2022,rating:8.0,genre:'Thriller',dur:'S2',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/sA7KXnTiQuNiLt8yMPOxiHp2o0f.jpg',plot:'Guests and staff of a luxury resort in Sicily.',videoUrl:''},
-  {id:107,title:'Severance',           year:2022,rating:8.7,genre:'Sci-Fi',  dur:'S2',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/sWokTV3KByIeD6shlpzFuZaVjmQ.jpg', plot:'Workers agree to a procedure separating work memories from personal life.',videoUrl:''},
+  {id:107,title:'Severance',           year:2022,rating:8.7,genre:'Sci-Fi',  dur:'S2',badge:'NEW',poster:'https://image.tmdb.org/t/p/w500/sWokTV3KByIeD6shlpzFuZaVjmQ.jpg', plot:'Workers separate work memories from personal life.',videoUrl:''},
   {id:108,title:'Wednesday',           year:2022,rating:8.1,genre:'Horror',  dur:'S1',badge:'HD', poster:'https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg', plot:'Wednesday Addams attends Nevermore Academy.',videoUrl:''},
-  {
-  id: 17,
-  title: 'With Love',
-  year: 2026,
-  rating: 7.7,
-  genre: 'Romance',
-  dur: '2h 21m',
-  badge: 'HD',
-  poster: 'https://drive.google.com/uc?export=view&id=19XZsnPvOkAuH_L3uTQ0MzMmZ2K4I--Sh',
-  plot: 'A heartwarming romantic comedy that will make you laugh, cry, and fall in love.',
-  videoUrl: 'https://drive.google.com/file/d/1-0NzQX-Aov1sqyTcQ1q53hv0dcDyKOvY/preview'
-},
 ];
 
 const GENRES_DATA = [
@@ -605,20 +549,19 @@ const GENRES_DATA = [
   {name:'Animation',emoji:'✨',bg:'linear-gradient(135deg,#0a0a1a,#1a0a2e)'},
 ];
 
-const HERO_SLIDES = [MOVIES[0],MOVIES[5],MOVIES[4],SERIES[2]];
+// With Love is the FIRST hero slide
+const HERO_SLIDES = [MOVIES[16], MOVIES[0], MOVIES[4], MOVIES[3]];
 
-// ── STATE ──────────────────────────────────────
 let S = {slide:0,timer:null,genre:'all',filteredMovies:[...MOVIES]};
 
-// ── INIT ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded',()=>{
   cursor();
   navInit();
   heroInit();
   tickerInit();
-  renderGrid('tGrid',MOVIES.slice(0,8));
-  renderGrid('mGrid',MOVIES);
-  renderGrid('sGrid',SERIES);
+  renderGrid('tGrid', MOVIES.slice(0,8));
+  renderGrid('mGrid', MOVIES);
+  renderGrid('sGrid', SERIES);
   genreGridInit();
   pillsInit();
   searchInit();
@@ -627,7 +570,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   smoothScroll();
 });
 
-// ── CURSOR ──────────────────────────────────────
 function cursor(){
   const c=document.getElementById('cur'),f=document.getElementById('cur2');
   if(!c||!f)return;
@@ -640,7 +582,6 @@ function cursor(){
   });
 }
 
-// ── NAVBAR ──────────────────────────────────────
 function navInit(){
   const n=document.getElementById('nav');
   const h=document.getElementById('hbg');
@@ -650,7 +591,6 @@ function navInit(){
     document.getElementById('btt').classList.toggle('vis',scrollY>400);
   },{passive:true});
   h?.addEventListener('click',()=>{h.classList.toggle('open');nl.classList.toggle('open')});
-  document.querySelectorAll('section[id]').forEach(()=>{});
   window.addEventListener('scroll',()=>{
     let cur='';
     document.querySelectorAll('section[id]').forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id});
@@ -658,7 +598,6 @@ function navInit(){
   },{passive:true});
 }
 
-// ── HERO SLIDER ──────────────────────────────────
 function heroInit(){
   const bg=document.getElementById('hBg'),ttl=document.getElementById('hTtl'),
         desc=document.getElementById('hDesc'),dots=document.getElementById('hDots'),
@@ -673,7 +612,8 @@ function heroInit(){
     cnt.style.cssText='opacity:0;transform:translateY(20px);transition:all .4s ease';
     setTimeout(()=>{
       bg.style.backgroundImage=`url('${sl.poster}')`;
-      ttl.textContent=sl.title;desc.textContent=sl.plot;
+      ttl.textContent=sl.title;
+      desc.textContent=sl.plot;
       document.getElementById('hMeta').innerHTML=
         `<span class="rt">⭐ ${sl.rating}</span><span class="dv">|</span><span>${sl.year}</span><span class="dv">|</span><span>${sl.genre}</span><span class="dv">|</span><span>${sl.dur}</span>`;
       document.getElementById('hWatch').dataset.id=sl.id;
@@ -687,14 +627,12 @@ function heroInit(){
   document.getElementById('hWatch')?.addEventListener('click',e=>openModal(+e.currentTarget.dataset.id));
   document.getElementById('hDl')?.addEventListener('click',()=>dlHandle(HERO_SLIDES[S.slide]));
   document.getElementById('hInfo')?.addEventListener('click',()=>openModal(HERO_SLIDES[S.slide].id));
-  // Touch swipe
   let tx=0;
   document.querySelector('.hero').addEventListener('touchstart',e=>{tx=e.changedTouches[0].clientX},{passive:true});
   document.querySelector('.hero').addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)go(S.slide+(d>0?1:-1))},{passive:true});
   update();reset();
 }
 
-// ── TICKER ──────────────────────────────────────
 function tickerInit(){
   const el=document.getElementById('tickEl');if(!el)return;
   const all=[...MOVIES,...SERIES];
@@ -702,7 +640,6 @@ function tickerInit(){
   el.innerHTML=h+h;
 }
 
-// ── RENDER MOVIE CARDS ──────────────────────────
 function renderGrid(id,items){
   const c=document.getElementById(id);if(!c)return;
   c.innerHTML=Array(4).fill(0).map(()=>`<div><div class="skel skel-p"></div><div class="skel skel-l"></div><div class="skel skel-l w6"></div></div>`).join('');
@@ -734,7 +671,6 @@ function card(m){
   </div>`;
 }
 
-// Event delegation
 document.addEventListener('click',e=>{
   const w=e.target.closest('.cbtn-w,.btn-w[data-id]');
   if(w&&w.dataset.id)openModal(+w.dataset.id);
@@ -742,7 +678,6 @@ document.addEventListener('click',e=>{
   if(d){const m=findById(+d.dataset.id);if(m)dlHandle(m)}
 });
 
-// ── GENRE GRID ──────────────────────────────────
 function genreGridInit(){
   const el=document.getElementById('gGrid');if(!el)return;
   el.innerHTML=GENRES_DATA.map(g=>`<div class="gcard" style="background:${g.bg}" data-g="${g.name.toLowerCase()}"><span>${g.emoji}</span><p>${g.name}</p></div>`).join('');
@@ -756,7 +691,6 @@ function genreGridInit(){
   });
 }
 
-// ── PILLS / SORT ──────────────────────────────────
 function pillsInit(){
   document.querySelectorAll('.pill').forEach(p=>{
     p.addEventListener('click',()=>{
@@ -781,7 +715,6 @@ function sortMovies(by){
   renderGrid('mGrid',f);
 }
 
-// ── SEARCH ──────────────────────────────────────
 function searchInit(){
   const tog=document.getElementById('sToggle'),ov=document.getElementById('sOv'),
         x=document.getElementById('sX'),inp=document.getElementById('sIn'),res=document.getElementById('sRes');
@@ -799,56 +732,108 @@ function searchInit(){
   },300));
 }
 
-// ── MODAL ──────────────────────────────────────
+// ════════════════════════════════════════
+//  MODAL — IFRAME PLAYER (Google Drive Fix)
+// ════════════════════════════════════════
 function modalInit(){
-  const modal=document.getElementById('modal'),mx=document.getElementById('mX'),
-        vid=document.getElementById('vid'),pb=document.getElementById('pBig'),
-        pov=document.getElementById('mPov');
+  const mx=document.getElementById('mX');
+  const pov=document.getElementById('mPov');
+  const pb=document.getElementById('pBig');
+
   mx?.addEventListener('click',closeModal);
-  modal?.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+  document.getElementById('modal')?.addEventListener('click',e=>{
+    if(e.target===document.getElementById('modal'))closeModal();
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-  pb?.addEventListener('click',()=>{vid.play();pov.classList.add('hid')});
-  vid?.addEventListener('pause',()=>pov.classList.remove('hid'));
-  vid?.addEventListener('play', ()=>pov.classList.add('hid'));
-  document.getElementById('mWatch')?.addEventListener('click',()=>{vid.play();pov.classList.add('hid')});
-  document.getElementById('mDl')?.addEventListener('click',()=>{const m=findById(+document.getElementById('modal').dataset.cid);if(m)dlHandle(m,'1080p')});
-  document.getElementById('mDl4k')?.addEventListener('click',()=>{const m=findById(+document.getElementById('modal').dataset.cid);if(m)dlHandle(m,'4K')});
+
+  // Play button hides the overlay so iframe is clickable
+  pb?.addEventListener('click',()=>{
+    pov.classList.add('hid');
+  });
+
+  document.getElementById('mWatch')?.addEventListener('click',()=>{
+    pov.classList.add('hid');
+  });
+
+  document.getElementById('mDl')?.addEventListener('click',()=>{
+    const id=+document.getElementById('modal').dataset.cid;
+    const m=findById(id);if(m)dlHandle(m,'HD');
+  });
+  document.getElementById('mDl4k')?.addEventListener('click',()=>{
+    const id=+document.getElementById('modal').dataset.cid;
+    const m=findById(id);if(m)dlHandle(m,'4K');
+  });
 }
 
 function openModal(id){
-  const modal=document.getElementById('modal'),m=findById(id);
+  const modal=document.getElementById('modal');
+  const m=findById(id);
   if(!modal||!m)return;
+
   modal.dataset.cid=id;
+
+  // Fill movie info
   document.getElementById('mTtl').textContent=m.title;
   document.getElementById('mRtg').textContent=`⭐ ${m.rating} / 10`;
   document.getElementById('mPlot').textContent=m.plot;
-  document.getElementById('mTags').innerHTML=[m.genre,m.year,m.dur,m.badge].map(t=>`<span class="tag">${esc(String(t))}</span>`).join('');
-  const vid=document.getElementById('vid'),src=document.getElementById('vSrc');
-  src.src=m.videoUrl||'';
-  vid.poster=m.poster;
-  if(m.videoUrl)vid.load();
-  document.getElementById('mPov').classList.remove('hid');
-  modal.classList.add('on');document.body.style.overflow='hidden';
-}
-function closeModal(){
-  document.getElementById('modal')?.classList.remove('on');
-  document.getElementById('vid')?.pause();
-  document.body.style.overflow='';
+  document.getElementById('mTags').innerHTML=[m.genre,m.year,m.dur,m.badge]
+    .map(t=>`<span class="tag">${esc(String(t))}</span>`).join('');
+
+  // Load video in iframe
+  const vid=document.getElementById('vid');
+  const pov=document.getElementById('mPov');
+
+  if(m.videoUrl){
+    // Has video — load it directly
+    vid.src=m.videoUrl;
+    pov.classList.remove('hid'); // show play button first
+  } else {
+    // No video — show placeholder
+    vid.src='about:blank';
+    pov.classList.remove('hid');
+  }
+
+  // Open modal
+  modal.classList.add('on');
+  document.body.style.overflow='hidden';
 }
 
-// ── DOWNLOAD ──────────────────────────────────
-function dlHandle(m,q='HD'){
-  toast(`⬇ Preparing "${esc(m.title)}" [${q}] download…`,'ok');
-  if(m.videoUrl){
-    const a=document.createElement('a');
-    a.href=m.videoUrl;a.download=`${m.title.replace(/\s+/g,'_')}_${q}.mp4`;a.rel='noopener noreferrer';
-    document.body.appendChild(a);a.click();document.body.removeChild(a);
-  } else {
-    setTimeout(()=>toast('ℹ Set videoUrl in the MOVIES array to enable real downloads.'),'1600');
+function closeModal(){
+  const modal=document.getElementById('modal');
+  const vid=document.getElementById('vid');
+  const pov=document.getElementById('mPov');
+  if(modal){
+    modal.classList.remove('on');
+    // Stop video by clearing src
+    vid.src='about:blank';
+    pov.classList.remove('hid');
+    document.body.style.overflow='';
   }
 }
 
-// ── SMOOTH SCROLL ──────────────────────────────
+// ════════════════════════════════════════
+//  DOWNLOAD
+// ════════════════════════════════════════
+function dlHandle(m,q='HD'){
+  toast(`⬇ Preparing "${esc(m.title)}" [${q}] download…`,'ok');
+  if(m.videoUrl){
+    // Convert preview link to download link for Google Drive
+    let dlUrl=m.videoUrl;
+    if(dlUrl.includes('drive.google.com/file/d/')){
+      const fileId=dlUrl.split('/d/')[1].split('/')[0];
+      dlUrl=`https://drive.google.com/uc?export=download&id=${fileId}`;
+    }
+    const a=document.createElement('a');
+    a.href=dlUrl;
+    a.download=`${m.title.replace(/\s+/g,'_')}_${q}.mp4`;
+    a.rel='noopener noreferrer';
+    a.target='_blank';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+  } else {
+    setTimeout(()=>toast('ℹ Add your video link to the videoUrl field to enable downloads.'),'',1600);
+  }
+}
+
 function smoothScroll(){
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
@@ -860,7 +845,6 @@ function smoothScroll(){
   });
 }
 
-// ── UTILITIES ──────────────────────────────────
 function findById(id){return[...MOVIES,...SERIES].find(m=>m.id===id)||null}
 function esc(s){const d=document.createElement('div');d.textContent=String(s);return d.innerHTML}
 function san(s){return s.replace(/[<>'"&]/g,'').substring(0,100)}
